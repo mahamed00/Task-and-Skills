@@ -7,7 +7,7 @@ class User():
     """
     Login and register
     """        
-    # لأتصال بقاعدة البيانات  
+    # To connect to database
     database = sqlite3.connect("SkillsApp")
     create_data = database.cursor()
     create_data = create_data.execute("create table if not exists 'User' (Email text , Name text, Skills text, Progress interger) ")
