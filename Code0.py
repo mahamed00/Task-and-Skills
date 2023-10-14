@@ -2,6 +2,7 @@
 
 import sqlite3
 import re
+import os
 
 class User():
     """
@@ -230,41 +231,6 @@ class The_Operations(User):
 
         except:
             self.Update_The_Email()
-        
-    def Switch_Account(self):
-        """
-        switch accounts
-        """
-        try:
-
-            Email = input("Enter Your Email: ").strip()
-            Name = input("Enter Your Name: ").strip().capitalize()
-                         # xx00@xx00.yy
-            if re.search(r"[a-z0-9]+(\@)[a-z]+(\.)[a-z]+",Email) and re.search(r"[A-z0-9]+", Name):
-
-                self.create_data.execute("update User set Email = ?, Name = ? where Email = ? and Name = ? ", (Email, Name)) 
-                print(f"\n\nNew Email: {Email}\nNew Name: {Name}")
-                return Email, Name
-
-            else:
-
-                print("You Entered Value Is Not Valid")
-                return self.Switch_Account()
-        
-        except:
-            
-            print("You Entered Value Is Not Valid")
-            return self.Switch_Account()
-
-    def Delete_The_Account(self):
-        """
-        To Delete the Account
-        """
-        self.create_data.execute("delete from User where Email = ? and Name = ?", (self.Email, self.Name))
-
-        print("Your Account Has Deleted")
-        # To save order
-        return self.database.commit()
 
     def Show_All_Data(self):
         """
@@ -345,9 +311,9 @@ class The_Operations(User):
 
         elif Opetion == "sw":
             # Switch Account
-            print("\nYou Choose: Switch Account")
-            database = sqlite3.connect("SkillsApp")
-            return database, database.cursor(), database.commit(), self.true_syntex_of_Email(), The_Operation.Operation()
+            print("\nYou Choose: Switch Account\n")
+                                                                           # Path python                                                   Name of File
+            return self.database.commit(), self.database.close(), os.system(r"C:\Users\maham\AppData\Local\Programs\Python\Python311\python.exe Code.py")
 
         else:
             # if You Entered Value Is Not Valid
