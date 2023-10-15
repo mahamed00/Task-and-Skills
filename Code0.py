@@ -240,6 +240,13 @@ class The_Operations(User):
         print(f"\nYour Email: {self.Email}\nYour Name: {self.Name}")
         # To show Skills and Progress
         return self.Show_The_Data()
+
+        def Switch_Account(self):
+        '''
+        Switch Account
+        '''
+                                                                       # Path python                                                   Name of File
+        return self.database.commit(), self.database.close(), os.system(r"C:\Users\maham\AppData\Local\Programs\Python\Python311\python.exe Code0.py")
     
     def Exist(self):
         """
@@ -312,8 +319,7 @@ class The_Operations(User):
         elif Opetion == "sw":
             # Switch Account
             print("\nYou Choose: Switch Account\n")
-                                                                           # Path python                                                   Name of File
-            return self.database.commit(), self.database.close(), os.system(r"C:\Users\maham\AppData\Local\Programs\Python\Python311\python.exe Code.py")
+            return self.Switch_Account()
 
         else:
             # if You Entered Value Is Not Valid
