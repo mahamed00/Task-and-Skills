@@ -245,7 +245,7 @@ class The_Operations(User):
         '''
         Switch Account
         '''
-                                                                       # Path python                                                   Name of File
+                                                                       # Path python in device                                         Name of File
         return self.database.commit(), self.database.close(), os.system(r"C:\Users\maham\AppData\Local\Programs\Python\Python311\python.exe Code0.py")
     
     def Exist(self):
